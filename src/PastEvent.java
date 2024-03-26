@@ -1,22 +1,34 @@
 import java.time.LocalDate;
 
-public class PastEvent extends Event{
+public class PastEvent {
    private LocalDate eventStartDate;
    private LocalDate eventEndDate;
    private String paymentStatus;
    private boolean requiresExtension;
    static final double eventCost=10_000;
    private String paymentDetails;
+   private String eventID;
+    private String eventName;
+    private String  eventLocation;
+    private String eventPointContact;
+    private int totalParticipants;
+    private int totalEventDays;
 
 
-   public PastEvent(String eventID,String eventName,String eventLocation,String eventPointContact,double eventCost,int totalParticipants,int totalEventDays,LocalDate eventStartDate,LocalDate eventEndDate,String paymentStatus,boolean requiresExtension,String paymentDetails){
+   public PastEvent(String eventID,String eventName,String eventLocation,String eventPointContact,int totalParticipants,int totalEventDays,LocalDate eventStartDate,LocalDate eventEndDate,String paymentStatus,boolean requiresExtension,String paymentDetails){
    
-super(eventID, eventName,eventLocation, eventPointContact, eventCost, totalParticipants, totalEventDays);
+
     this.eventStartDate=eventStartDate;
     this.eventEndDate=eventEndDate;
     this.paymentStatus=paymentStatus;
     this.requiresExtension=requiresExtension;
     this.paymentDetails=paymentDetails;
+    this.eventID=eventID;
+    this.eventName=eventName;
+    this.eventLocation=eventLocation;
+    this.eventPointContact=eventPointContact;
+    this.totalEventDays=totalEventDays;
+    this.totalParticipants=totalParticipants;
 }
 
 
@@ -68,14 +80,71 @@ public String getPaymentDetails() {
 public void setPaymentDetails(String paymentDetails) {
     this.paymentDetails = paymentDetails;
 }
-@Override
-public void calculateEventCost(){
-    System.out.println();
+
+
+public String getEventID() {
+    return eventID;
+}
+
+
+public void setEventID(String eventID) {
+    this.eventID = eventID;
+}
+
+
+public String getEventName() {
+    return eventName;
+}
+
+
+public void setEventName(String eventName) {
+    this.eventName = eventName;
+}
+
+
+public String getEventLocation() {
+    return eventLocation;
+}
+
+
+public void setEventLocation(String eventLocation) {
+    this.eventLocation = eventLocation;
+}
+
+
+public String getEventPointContact() {
+    return eventPointContact;
+}
+
+
+public void setEventPointContact(String eventPointContact) {
+    this.eventPointContact = eventPointContact;
+}
+
+
+public int getTotalParticipants() {
+    return totalParticipants;
+}
+
+
+public void setTotalParticipants(int totalParticipants) {
+    this.totalParticipants = totalParticipants;
+}
+
+
+public int getTotalEventDays() {
+    return totalEventDays;
+}
+
+
+public void setTotalEventDays(int totalEventDays) {
+    this.totalEventDays = totalEventDays;
 }
 
 
 @Override
-public String toString() {
+public String toString()
+     {
     return "PastEvent [eventStartDate=" + eventStartDate + ", eventEndDate=" + eventEndDate + ", paymentStatus="
             + paymentStatus + ", requiresExtension=" + requiresExtension + ", paymentDetails=" + paymentDetails + "]";
 }
